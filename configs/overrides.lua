@@ -108,13 +108,14 @@ M.nvimtree = {
   },
 
   filters = {
-    dotfiles = true,
-    exclude = {
+    git_ignored = false,
+    custom = {
       ".git/",
       "__pycache__/",
       "node_modules/",
       ".project",
-      ".cilasspath",
+      ".classpath",
+      ".DS_Store",
     },
   },
 
