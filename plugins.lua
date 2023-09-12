@@ -81,7 +81,9 @@ local plugins = {
     },
     event = "LspAttach",
     opts = {
-      request_timeout = 2000,
+      lightbulb = {
+        enable = false,
+      },
     },
   },
 
