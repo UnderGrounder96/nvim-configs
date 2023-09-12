@@ -84,6 +84,9 @@ local plugins = {
       lightbulb = {
         enable = false,
       },
+      code_action = {
+        show_server_name = true,
+      },
     },
   },
 
