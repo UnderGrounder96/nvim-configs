@@ -12,7 +12,7 @@ M.general = {
 M.lspsaga = {
   n = {
     ["t"] =  { "<cmd>Lspsaga term_toggle<CR>", "enable floating terminal", opts },
-    [","] =  { "<cmd>Lspsaga code_action<CR>", "execute code action check", opts },
+    ["f"] =  { "<cmd>Lspsaga code_action<CR>", "execute code action check", opts },
   },
 }
 
