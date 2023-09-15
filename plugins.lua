@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -40,26 +40,26 @@ local plugins = {
 
   -- Install a plugin
   {
-	  "0x00-ketsu/autosave.nvim",
+    "0x00-ketsu/autosave.nvim",
     lazy = false,
     config = function()
-      require('autosave').setup {
-        events = {"CursorHold", "CursorHoldI", "BufLeave", "FocusLost"},
-        prompt_message = function ()
-          return "💾: " .. vim.fn.expand('%') .. " @ " .. vim.fn.strftime('%T')
+      require("autosave").setup {
+        events = { "CursorHold", "CursorHoldI", "BufLeave", "FocusLost" },
+        prompt_message = function()
+          return "💾: " .. vim.fn.expand "%" .. " @ " .. vim.fn.strftime "%T"
         end,
       }
-    end
+    end,
   },
 
   {
     "cappyzawa/trim.nvim",
     lazy = false,
     config = function()
-      require('trim').setup {
+      require("trim").setup {
         trim_last_line = false,
       }
-    end
+    end,
   },
 
   {
@@ -76,8 +76,8 @@ local plugins = {
   {
     "nvimdev/lspsaga.nvim",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",  -- optional
-        "nvim-tree/nvim-web-devicons"       -- optional
+      "nvim-treesitter/nvim-treesitter", -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
     },
     event = "LspAttach",
     opts = {
@@ -90,6 +90,20 @@ local plugins = {
     },
   },
 
+  {
+    "someone-stole-my-name/yaml-companion.nvim",
+    requires = {
+      { "neovim/nvim-lspconfig" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+    config = function()
+      require("telescope").load_extension "yaml_schema"
+      local cfg = require("yaml-companion").setup {}
+      require("lspconfig")["yamlls"].setup(cfg)
+      require("yaml-companion").open_ui_select()
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
@@ -107,4 +121,3 @@ local plugins = {
 }
 
 return plugins
-
