@@ -5,10 +5,16 @@ local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-  "lua_ls", "denols", "html", "ansiblels",
-  "astro", "pylsp",
-  "yamlls", "docker_compose_language_service",
-  "gradle_ls", "sqlls",
+  "ansiblels",
+  "astro",
+  "denols",
+  "dockerls",
+  "docker_compose_language_service",
+  "gradle_ls",
+  "html",
+  "lua_ls",
+  "pylsp",
+  "sqlls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -21,4 +27,3 @@ end
 --
 -- lspconfig.pyright.setup { blabla}
 --
-
