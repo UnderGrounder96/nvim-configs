@@ -44,7 +44,7 @@ local plugins = {
     lazy = false,
     config = function()
       require("autosave").setup {
-        events = { "CursorHold", "CursorHoldI", "BufLeave", "FocusLost" },
+        events = { "CursorHold", "CursorHoldI", "FocusLost" },
         prompt_message = function()
           return "💾: " .. vim.fn.expand "%" .. " @ " .. vim.fn.strftime "%T"
         end,
@@ -88,21 +88,6 @@ local plugins = {
         show_server_name = true,
       },
     },
-  },
-
-  {
-    "someone-stole-my-name/yaml-companion.nvim",
-    requires = {
-      { "neovim/nvim-lspconfig" },
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim" },
-    },
-    config = function()
-      require("telescope").load_extension "yaml_schema"
-      local cfg = require("yaml-companion").setup {}
-      require("lspconfig")["yamlls"].setup(cfg)
-      require("yaml-companion").open_ui_select()
-    end,
   },
 
   -- To make a plugin not be loaded
