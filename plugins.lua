@@ -40,6 +40,24 @@ local plugins = {
 
   -- Install a plugin
   {
+    "NvChad/nvterm",
+    config = function()
+      require("nvterm").setup {
+        terminals = {
+          type_opts = {
+            float = {
+              row = 0.15,
+              col = 0.2,
+              width = 0.6,
+              height = 0.6,
+            },
+          },
+        },
+      }
+    end,
+  },
+
+  {
     "0x00-ketsu/autosave.nvim",
     lazy = false,
     config = function()
