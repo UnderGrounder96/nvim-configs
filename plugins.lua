@@ -38,6 +38,11 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
+  },
+
   -- Install a plugin
   {
     "NvChad/nvterm",
@@ -78,11 +83,6 @@ local plugins = {
         trim_last_line = false,
       }
     end,
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = overrides.blankline,
   },
 
   {
