@@ -91,23 +91,6 @@ local plugins = {
     dependencies = "nvim-telescope/telescope.nvim",
   },
 
-  {
-    "nvimdev/lspsaga.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", -- optional
-      "nvim-tree/nvim-web-devicons", -- optional
-    },
-    event = "LspAttach",
-    opts = {
-      lightbulb = {
-        enable = false,
-      },
-      code_action = {
-        show_server_name = true,
-      },
-    },
-  },
-
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
