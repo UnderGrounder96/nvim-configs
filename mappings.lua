@@ -13,10 +13,16 @@ M.general = {
 }
 
 -- more keybinds!
-M.lspsaga = {
+M.nvterm = {
+  plugin = true,
+
   n = {
-    ["t"] = { "<cmd>Lspsaga term_toggle<CR>", "enable floating terminal", opts },
-    ["f"] = { "<cmd>Lspsaga code_action<CR>", "execute code action check", opts },
+    ["t"] = {
+      function()
+        require("nvterm.terminal").toggle("float")
+      end,
+      "Toggle float terminal"
+    },
   },
 }
 
