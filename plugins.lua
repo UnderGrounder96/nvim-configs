@@ -64,7 +64,7 @@ local plugins = {
 
   {
     "0x00-ketsu/autosave.nvim",
-    lazy = false,
+    event = "BufRead",
     config = function()
       require("autosave").setup {
         events = { "CursorHold", "CursorHoldI", "FocusLost" },
@@ -77,7 +77,7 @@ local plugins = {
 
   {
     "cappyzawa/trim.nvim",
-    lazy = false,
+    event = "BufRead",
     config = function()
       require("trim").setup {
         trim_last_line = false,
@@ -87,8 +87,20 @@ local plugins = {
 
   {
     "chikko80/error-lens.nvim",
-    event = "BufRead",
+    event = "LspAttach",
     dependencies = "nvim-telescope/telescope.nvim",
+    config = true,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        signs = false,
+      }
+    end,
   },
 
   -- To make a plugin not be loaded
