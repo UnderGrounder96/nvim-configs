@@ -86,13 +86,6 @@ local plugins = {
   },
 
   {
-    "chikko80/error-lens.nvim",
-    event = "LspAttach",
-    dependencies = "nvim-telescope/telescope.nvim",
-    config = true,
-  },
-
-  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     dependencies = "nvim-lua/plenary.nvim",
