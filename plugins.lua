@@ -67,7 +67,7 @@ local plugins = {
     event = "BufRead",
     config = function()
       require("autosave").setup {
-        events = { "CursorHold", "CursorHoldI", "FocusLost" },
+        events = { "CursorHold", "FocusLost" },
         prompt_message = function()
           return "💾: " .. vim.fn.expand "%" .. " @ " .. vim.fn.strftime "%T"
         end,

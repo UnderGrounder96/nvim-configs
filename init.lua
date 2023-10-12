@@ -14,7 +14,7 @@ opt.relativenumber = true
 -- file
 opt.filetype = "on"
 opt.fileformat = "unix"
-opt.updatetime = 4000
+opt.updatetime = 2500
 
 -- indenting
 opt.lbr = true
