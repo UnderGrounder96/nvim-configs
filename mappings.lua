@@ -13,15 +13,50 @@ M.general = {
 }
 
 -- more keybinds!
+M.disabled = {
+  n = {
+    ["<leader>gt"] = "",
+  },
+}
+
 M.nvterm = {
   plugin = true,
 
   n = {
-    ["t"] = {
+    ["<leader>t"] = {
       function()
-        require("nvterm.terminal").toggle("float")
+        require("nvterm.terminal").toggle "float"
       end,
-      "Toggle float terminal"
+      "Toggle float terminal",
+    },
+  },
+}
+
+M.gitsigns = {
+  plugin = true,
+
+  n = {
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>gr"] = {
+      function()
+        require("gitsigns").reset_hunk()
+      end,
+      "Reset hunk",
+    },
+
+    ["<leader>gp"] = {
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      "Preview hunk",
+    },
+
+    ["<leader>gd"] = {
+      function()
+        require("gitsigns").toggle_deleted()
+      end,
+      "Toggle deleted",
     },
   },
 }
