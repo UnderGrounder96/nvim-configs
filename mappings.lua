@@ -23,7 +23,7 @@ M.nvterm = {
   plugin = true,
 
   n = {
-    ["<leader>t"] = {
+    ["<leader>tt"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
