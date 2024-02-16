@@ -22,6 +22,23 @@ opt.autoindent = true
 opt.breakindent = true
 opt.formatoptions = "l"
 
+-- folding
+opt.foldlevel = 6
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+autocmd("BufWinLeave", {
+  pattern = "*.*",
+  desc = "save view (folds), when closing file",
+  command = "mkview",
+})
+
+autocmd("BufWinEnter", {
+  pattern = "*.*",
+  desc = "load view (folds), when opening file",
+  command = "silent! loadview",
+})
+
 -- text format
 opt.wrap = true
 opt.scrolloff = 8
