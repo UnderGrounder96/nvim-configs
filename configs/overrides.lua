@@ -3,7 +3,7 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     -- web dev
-    "astro",
+    --"astro",
     "css",
     "html",
     "graphql",
@@ -18,8 +18,8 @@ M.treesitter = {
     "vim",
 
     -- build
-    "c",
-    "cpp",
+    -- "c",
+    --"cpp",
 
     -- ops
     "dockerfile",
@@ -56,7 +56,7 @@ M.mason = {
     "stylua",
 
     -- web dev stuff
-    "astro-language-server",
+    --    "astro-language-server",
     "deno",
     "html-lsp",
     "prettierd",
@@ -67,7 +67,7 @@ M.mason = {
     "python-lsp-server",
 
     -- server
-    "sqlfmt",
+    --"sqlfmt",
 
     -- ops
     "ansible-lint",
