@@ -70,8 +70,8 @@ M.mason = {
     -- server
 
     -- ops
-    "ansible-lint",
-    "ansible-language-server",
+    -- "ansible-lint",
+    -- "ansible-language-server",
     "docker-compose-language-service",
     "dockerfile-language-server",
     "gopls",
