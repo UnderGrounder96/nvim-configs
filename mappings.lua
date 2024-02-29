@@ -10,6 +10,9 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move +highlighted lines", opts },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move -highlighted lines", opts },
   },
+  t = {
+    ["<Esc><Esc>"] = { "<C-\\><C-N>", "Exit terminal mode", opts },
+  },
 }
 
 -- more keybinds!
