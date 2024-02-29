@@ -1,15 +1,16 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
-
 local lspconfig = require "lspconfig"
+local configs = require "plugins.configs.lspconfig"
+
+local on_attach = configs.on_attach
+local capabilities = configs.capabilities
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
   "ansiblels",
-  -- "astro",
   "denols",
   "dockerls",
   "docker_compose_language_service",
+  "gopls",
   "gradle_ls",
   "html",
   "lua_ls",

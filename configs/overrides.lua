@@ -3,10 +3,8 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     -- web dev
-    --"astro",
     "css",
     "html",
-    "graphql",
     "javascript",
     "json",
     "typescript",
@@ -16,10 +14,10 @@ M.treesitter = {
     "bash",
     "make",
     "vim",
+    "vimdoc",
 
     -- build
-    -- "c",
-    --"cpp",
+    "c",
 
     -- ops
     "dockerfile",
@@ -28,6 +26,10 @@ M.treesitter = {
     -- git
     "git_config",
     "gitignore",
+
+    --golang
+    "go",
+    "gomod",
 
     -- script
     "groovy",
@@ -39,7 +41,6 @@ M.treesitter = {
 
     -- docs
     "markdown",
-    "markdown_inline",
   },
   indent = {
     enable = true,
@@ -56,25 +57,42 @@ M.mason = {
     "stylua",
 
     -- web dev stuff
-    --    "astro-language-server",
     "deno",
+    "eslint_d",
     "html-lsp",
     "prettierd",
-    "stylelint",
 
     -- scripts
     "autopep8",
+    "shfmt",
     "python-lsp-server",
 
     -- server
-    --"sqlfmt",
 
     -- ops
     "ansible-lint",
     "ansible-language-server",
     "docker-compose-language-service",
     "dockerfile-language-server",
+    "gopls",
     "gradle-language-server",
+  },
+}
+
+M.conform = {
+  notify_on_error = false,
+
+  formatters_by_ft = {
+    lua = { "stylua" },
+    go = { "gofmt" },
+    sh = { "shfmt" },
+    terraform = { "terraform_fmt" },
+    python = { "autopep8" },
+    ["_"] = { "trim_newlines", "trim_whitespace", "prettierd" },
+  },
+
+  format_on_save = {
+    lsp_fallback = true,
   },
 }
 

@@ -10,10 +10,9 @@ local plugins = {
     dependencies = {
       -- format & linting
       {
-        "nvimtools/none-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
+        "stevearc/conform.nvim",
+        event = "BufWritePre",
+        opts = overrides.conform,
       },
     },
     config = function()
@@ -71,16 +70,6 @@ local plugins = {
         prompt_message = function()
           return "💾: " .. vim.fn.expand "%" .. " @ " .. vim.fn.strftime "%T"
         end,
-      }
-    end,
-  },
-
-  {
-    "cappyzawa/trim.nvim",
-    event = "BufRead",
-    config = function()
-      require("trim").setup {
-        trim_last_line = false,
       }
     end,
   },
