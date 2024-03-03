@@ -75,6 +75,16 @@ local plugins = {
   },
 
   {
+    "cappyzawa/trim.nvim",
+    event = "BufWritePre",
+    config = function()
+      require("trim").setup {
+        trim_last_line = false,
+      }
+    end,
+  },
+
+  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     dependencies = "nvim-lua/plenary.nvim",
