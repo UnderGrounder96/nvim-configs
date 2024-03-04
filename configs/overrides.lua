@@ -12,6 +12,7 @@ M.treesitter = {
 
     -- unix
     "bash",
+    "make",
     "vim",
     "vimdoc",
 
