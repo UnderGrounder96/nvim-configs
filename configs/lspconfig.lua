@@ -6,16 +6,11 @@ local capabilities = configs.capabilities
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-  -- "ansiblels",
-  "denols",
   "dockerls",
-  "docker_compose_language_service",
   "gopls",
-  "gradle_ls",
-  "html",
   "lua_ls",
   "pylsp",
-  "sqlls",
+  "vtsls",
 }
 
 for _, lsp in ipairs(servers) do

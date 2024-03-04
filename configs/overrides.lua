@@ -12,12 +12,8 @@ M.treesitter = {
 
     -- unix
     "bash",
-    "make",
     "vim",
     "vimdoc",
-
-    -- build
-    "c",
 
     -- ops
     "dockerfile",
@@ -25,7 +21,6 @@ M.treesitter = {
 
     -- git
     "git_config",
-    "gitignore",
 
     --golang
     "go",
@@ -52,30 +47,18 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "deno",
-    "eslint_d",
-    "html-lsp",
-    "prettierd",
-
-    -- scripts
-    "autopep8",
-    "shfmt",
-    "python-lsp-server",
-
-    -- server
-
-    -- ops
-    -- "ansible-lint",
-    -- "ansible-language-server",
-    "docker-compose-language-service",
+    -- LSP
     "dockerfile-language-server",
     "gopls",
-    "gradle-language-server",
+    "lua-language-server",
+    "python-lsp-server",
+    "vtsls",
+
+    -- formatters
+    "autopep8",
+    "prettierd",
+    "shfmt",
+    "stylua",
   },
 }
 
