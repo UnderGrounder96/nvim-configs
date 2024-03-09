@@ -14,6 +14,25 @@ local plugins = {
         event = "BufWritePre",
         opts = overrides.conform,
       },
+
+      {
+        "Exafunction/codeium.nvim",
+        event = "BufReadPre",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          {
+            "hrsh7th/nvim-cmp",
+            opts = function()
+              local cmp_conf = require "plugins.configs.cmp"
+              table.insert(cmp_conf.sources, { name = "codeium" })
+              return cmp_conf
+            end,
+          },
+        },
+        config = function()
+          require("codeium").setup {}
+        end,
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
