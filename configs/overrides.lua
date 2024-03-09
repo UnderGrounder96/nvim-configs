@@ -56,6 +56,7 @@ M.mason = {
     "vtsls",
 
     -- formatters
+    "deno",
     "autopep8",
     "prettierd",
     "shfmt",
@@ -69,6 +70,10 @@ M.conform = {
   formatters_by_ft = {
     lua = { "stylua" },
     go = { "gofmt" },
+    javascript = { "deno_fmt" },
+    javascriptreact = { "deno_fmt" },
+    typescript = { "deno_fmt" },
+    typescriptreact = { "deno_fmt" },
     sh = { "shfmt" },
     terraform = { "terraform_fmt" },
     python = { "autopep8" },
