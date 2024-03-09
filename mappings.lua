@@ -10,15 +10,21 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move +highlighted lines", opts },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move -highlighted lines", opts },
   },
-  t = {
-    ["<Esc><Esc>"] = { "<C-\\><C-N>", "Exit terminal mode", opts },
-  },
 }
 
 -- more keybinds!
 M.disabled = {
+  -- n = {
+  --   ["<leader>gt"] = "",
+  -- },
+}
+
+M.telescope = {
+  plugin = true,
+
   n = {
-    ["<leader>gt"] = "",
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
   },
 }
 
@@ -39,8 +45,6 @@ M.gitsigns = {
   plugin = true,
 
   n = {
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
-    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
     ["<leader>gr"] = {
       function()
         require("gitsigns").reset_hunk()
