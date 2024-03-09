@@ -94,6 +94,11 @@ M.nvimtree = {
 
   view = {
     width = 29,
+    number = true,
+    relativenumber = true,
+    float = {
+      enable = true,
+    },
   },
 
   ui = {
