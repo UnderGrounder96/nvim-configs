@@ -55,7 +55,7 @@ M.gitsigns = {
       "Preview hunk",
     },
 
-    ["<leader>gd"] = {
+    ["<leader>gt"] = {
       function()
         require("gitsigns").toggle_deleted()
       end,
