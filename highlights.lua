@@ -3,17 +3,25 @@
 -- base30 variable names can also be used as colors
 
 local M = {}
+-- TODO: hello there
+-- WARN: don't do this
+-- FIXME: don't do this
+-- HACK: AVOID this
+-- TEST: needs testing
 
 ---@type Base46HLGroupsList
 M.override = {
   Comment = {
     italic = true,
   },
-}
 
----@type HLTable
-M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  ["@keyword.exception"] = {
+    link = "Conditional",
+  },
+
+  ["@variable.member"] = {
+    fg = "blue",
+  },
 }
 
 return M
