@@ -1,20 +1,39 @@
----@type ChadrcConfig
 local M = {}
-
--- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "vscode_dark",
   theme_toggle = { "vscode_dark", "jellybeans" },
 
-  hl_override = highlights.override,
   nvdash = {
     load_on_startup = true,
   },
 
   statusline = {
     theme = "vscode_colored",
+  },
+
+  term = {
+    float = {
+      row = 0.15,
+      col = 0.2,
+      width = 0.6,
+      height = 0.6,
+      border = "double",
+    },
+  },
+
+  hl_override = {
+    Comment = {
+      italic = true,
+    },
+
+    ["@keyword.exception"] = {
+      link = "Conditional",
+    },
+
+    ["@variable.member"] = {
+      fg = "blue",
+    },
   },
 
   changed_themes = {
@@ -41,10 +60,5 @@ M.ui = {
     },
   },
 }
-
-M.plugins = "custom.plugins"
-
--- check core.mappings for table structure
-M.mappings = require "custom.mappings"
 
 return M
