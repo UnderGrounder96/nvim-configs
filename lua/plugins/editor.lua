@@ -70,10 +70,6 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
-      git = {
-        enable = true,
-      },
-
       ui = {
         confirm = {
           trash = false,
@@ -90,7 +86,6 @@ return {
       },
 
       renderer = {
-        highlight_git = true,
         highlight_modified = "all",
         highlight_opened_files = "all",
         icons = {
