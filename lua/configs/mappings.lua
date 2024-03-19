@@ -9,9 +9,7 @@ local mappings = {
   },
 
   x = {
-    -- Paste without copying replaced text
-    -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text" },
+    ["p"] = { '"_dP', "Dont copy replaced text" },
   },
 
   n = {
