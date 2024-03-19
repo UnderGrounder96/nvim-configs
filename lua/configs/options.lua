@@ -38,13 +38,13 @@ opt.foldlevel = 6
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-autocmd("BufEnter", {
+autocmd("BufLeave", {
   pattern = "*.*",
   desc = "save view (folds), when closing file",
   command = "mkview",
 })
 
-autocmd("BufLeave", {
+autocmd("BufEnter", {
   pattern = "*.*",
   desc = "load view (folds), when opening file",
   command = "silent! loadview",
