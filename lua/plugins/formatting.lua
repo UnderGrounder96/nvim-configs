@@ -1,5 +1,11 @@
 return {
   {
+    "cappyzawa/trim.nvim",
+    event = "BufWritePre",
+    config = true,
+  },
+
+  {
     "0x00-ketsu/autosave.nvim",
     event = "BufReadPost",
     opts = {
@@ -30,7 +36,7 @@ return {
         sh = { "shfmt" },
         terraform = { "terraform_fmt" },
         python = { "autopep8" },
-        ["_"] = { "trim_newlines", "trim_whitespace", "prettierd" },
+        ["_"] = { "prettierd" },
       },
     },
   },
